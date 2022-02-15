@@ -4,7 +4,7 @@
   z-index: 100;
 }
 
-#header-nav {
+.header-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,7 +12,7 @@
   flex-wrap: nowrap;
   height: inherit;
   width: 100%;
-  background: black;
+  background: #282A35;
   line-height: 51.75px;
   padding-right: 16px;
 }
@@ -22,4 +22,17 @@
   background: none;
   color: white;
   padding: 12px 15px;
+  transition: opacity 0.2s ease-in;
+}
+
+#header-btn:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+#header-logo-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
 }

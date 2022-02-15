@@ -4,8 +4,8 @@ import '../../stylesheets/app/Navmenu.css';
 
 function Navmenu() {
   return (
-    <div>
-    
+    <div id="header-menu">
+      <h1>Modal</h1>
     </div>
   );
 }
