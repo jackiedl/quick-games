@@ -1,0 +1,25 @@
+#header {
+  height: 65px;
+  position: relative;
+  z-index: 100;
+}
+
+#header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  height: inherit;
+  width: 100%;
+  background: black;
+  line-height: 51.75px;
+  padding-right: 16px;
+}
+
+#header-btn {
+  border: none;
+  background: none;
+  color: white;
+  padding: 12px 15px;
+}
