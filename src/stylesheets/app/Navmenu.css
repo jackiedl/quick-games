@@ -1,4 +1,4 @@
-#header-menu {
+.header-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,9 +8,17 @@
   width: 100%;
   max-width: 350px;
   background: white;
-  transition: left 0.1s ease 0.14s;
   box-shadow: 3px 6px 6px rgb(0 0 0 / 25%);
   overflow-y: scroll;
   padding-top: 7px;
   border-top: 1px solid rgba(0,0,0,0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+.header-menu.open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }

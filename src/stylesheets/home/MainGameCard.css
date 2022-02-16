@@ -1,0 +1,26 @@
+@media (min-width: 992px) {
+  .main-game-card.primary {
+    min-height: 320px;
+    padding: 1.1em, 0;
+    width: 470px;
+  }
+}
+
+@media (min-width: 444px) {
+  .main-game-card.primary {
+    width: 297px;
+  }
+}
+.main-game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.125rem;
+  line-height: 1.4625rem;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  color: black;
+  flex-wrap: nowrap;
+  height: 300px;
+}

@@ -1,0 +1,11 @@
+.main-wrapper, .other-wrapper{
+  padding: 15px 0;
+  background-color: #4d88f9;
+}
+
+.main-section, .other-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+@media (min-width: 1200px){
+  .other-card-wrapper{
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 992px){
+  .other-card-wrapper{
+    flex-wrap: nowrap;
+    max-width: 992px;
+  }
+}
+.other-wrapper {
+  background-color: white;
+}
+
+.other-card-wrapper {
+  max-width: 1700px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
