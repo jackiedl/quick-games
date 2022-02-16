@@ -20,16 +20,13 @@
 .other-game-card {
   width: 240px;
   margin: 30px;
-  border-radius: 8px;
-  border: solid 1px #dcdcdc;
   background: #fff;
   text-align: center;
   overflow: hidden;
   height: 320px;
-  box-shadow: 0px 0px 0px 2px #dcdcdc;
+  box-shadow: 0px 0px 0px 1px #dcdcdc;
 }
 
 .other-game-card:hover {
   box-shadow: 0px 0px 0px 4px #dcdcdc;
-  cursor: pointer;
 }

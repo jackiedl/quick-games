@@ -3,12 +3,11 @@ body {
 }
 
 .primary{
-  box-shadow: 0px 0px 0px 2px #2860d8;
+  box-shadow: 0px 0px 0px 1px #2860d8;
   transition: box-shadow 0.1s linear;
   margin: 0.5em
 }
-
 .primary:hover {
-  box-shadow: 0px 0px 0px 6px #2860d8;
+  box-shadow: 0px 0px 0px 4px #2860d8;
   cursor: pointer;
 }
