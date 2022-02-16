@@ -1,0 +1,17 @@
+.game {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: calc(100% - 65px);
+  display: flex;
+  flex-direction: column;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
