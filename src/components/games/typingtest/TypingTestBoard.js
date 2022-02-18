@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../../../stylesheets/games/typingtest/TypingTestBoard.css";
+import "../../../stylesheets/games/typingtest/TypingTest.css";
 
 function TypingTestBoard(props) {
 

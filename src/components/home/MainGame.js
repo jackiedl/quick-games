@@ -12,7 +12,7 @@ function MainGame() {
   return (
     <div className="main-wrapper">
       <div className="main-section">
-        <Link to="/typingtest">
+        <Link to="/reactiontime">
           <MainGameCard />
         </Link>
         

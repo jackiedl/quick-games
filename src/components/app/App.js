@@ -4,14 +4,14 @@ import "../../stylesheets/app/App.css";
 
 import Navbar from "./Navbar";
 import Home from "../../components/home/Home";
-import TypingTest from "../games/typingtest/TypingTest"
+import ReactionTime from '../games/reactiontime/ReactionTime';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navbar />}>
         <Route index element={<Home />} />
-        <Route path="/typingtest" element={<TypingTest />} />
+        <Route path="/reactiontime" element={<ReactionTime />} />
       </Route>
     </Routes>
   );
