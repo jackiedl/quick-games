@@ -13,7 +13,7 @@ function ReactionTime() {
   }
 
   return (
-    <div className="game rt">
+    <div className="rt-game-container">
       <div className="board-container rt" onClick={startGame}>
         {!gameStart ? <ReactionTimeMenu/> :
                       <ReactionTimeGame />}

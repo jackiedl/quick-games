@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 
+import ReactionTimePlaying from "./ReactionTimePlaying";
+import ReactionTimeError from "./ReactionTimeError";
+import ReactionTimeResults from "./ReactionTimeResults";
+
 function ReactionTimeGame(){
   // false blue screen means it was clicked to early
   // true blue screen shows results 
@@ -15,7 +19,6 @@ function ReactionTimeGame(){
       const timer = setTimeout(() => {
         game.remove("red");
         game.add("green");
-        console.log(Date.now() + " start");
         setStartTime(Date.now())
       }, timeout);
       return () => clearTimeout(timer);
@@ -59,8 +62,12 @@ function ReactionTimeGame(){
   }
 
   return(
-    <div id="rt-game" className="gameplay rt red" onClick={handleClick}>
-      {isPlaying ? <h1> Playing </h1> : results ? <h1> {(endTime - startTime)} </h1> : <h1> error</h1>}
+    <div id="rt-game" className="gameplay red" onClick={handleClick}>
+      {
+        isPlaying ? <ReactionTimePlaying startTime={startTime}/> : 
+        results ? <ReactionTimeResults results={endTime - startTime} /> :
+                  <ReactionTimeError />
+      }
     </div>
   )
 }

@@ -1,3 +1,16 @@
+@media (min-width: 992px) {
+  .main-game-card.primary {
+    min-height: 320px;
+    padding: 1.1em, 0;
+    width: 470px;
+  }
+}
+
+@media (min-width: 444px) {
+  .main-game-card.primary {
+    width: 297px;
+  }
+}
 .main-wrapper, .other-wrapper{
   padding: 15px 0;
   background-color: #4d88f9;
@@ -8,4 +21,71 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.main-game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.125rem;
+  line-height: 1.4625rem;
+  align-items: center;
+  background-color: white;
+  color: black;
+  flex-wrap: nowrap;
+  height: 300px;
+}
+
+.main-game-icon-container {
+  flex: 1.5;
+  background: #b5e352;
+  width: 100%
+}
+
+.main-game-desc-container {
+  flex: 1;
+}
+
+.main-game-icon, .main-game-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-game-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.main-game-icon > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main-game-desc > p {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.play-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20.8px;
+  line-height: 1.3rem;
+  border-radius: 44px;
+  letter-spacing: 0.25px;
+  height: 44px;
+  color: #333;
+  border: 1px solid #ccc;
+  font-weight: 700;
+}
+
+.play-btn:hover {
+  background: rgb(182, 182, 182);
+  cursor: pointer;
 }

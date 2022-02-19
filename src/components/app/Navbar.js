@@ -27,9 +27,9 @@ function Navbar() {
             <FontAwesomeIcon icon={faBars} size="2xl" fixedWidth /> : 
             <FontAwesomeIcon icon={faXmark} size="2xl" fixedWidth /> }
           </button>
-          <a id="header-logo-nav" href="/">
+          <a className="header-logo-nav" href="/">
             <FontAwesomeIcon icon={faGamepad} size="2xl" fixedWidth />
-            Quick Games
+            <p>Quick Games</p>
           </a>
         </div>
         <Navmenu menuOpen={menuOpen}/> 
