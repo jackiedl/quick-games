@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
 }
-.main-game-card {
+.main-game-card, .other-game-card{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,34 +35,34 @@
   height: 300px;
 }
 
-.main-game-icon-container {
+.main-game-icon-container, .other-game-icon-container {
   flex: 1.5;
   background: #b5e352;
   width: 100%
 }
 
-.main-game-desc-container {
+.main-game-desc-container, .other-game-desc-container {
   flex: 1;
 }
 
-.main-game-icon, .main-game-desc {
+.main-game-icon, .main-game-desc, .other-game-icon, .other-game-desc {
   display: flex;
   flex-direction: column;
 }
 
-.main-game-icon {
+.main-game-icon, .other-game-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
 }
 
-.main-game-icon > p {
+.main-game-icon > p, .other-game-icon > p {
   font-size: 20px;
   font-weight: bold;
 }
 
-.main-game-desc > p {
+.main-game-desc > p, .other-game-desc > p {
   font-size: 20px;
   font-style: italic;
 }
@@ -88,4 +88,16 @@
 .play-btn:hover {
   background: rgb(182, 182, 182);
   cursor: pointer;
+}
+
+.tictactoe {
+  background-color: #e05c56;
+}
+
+.connectfour {
+  background-color:#00a2b3;
+}
+
+.typingtest {
+  background-color: #f7da21;
 }

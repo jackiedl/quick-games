@@ -17,7 +17,6 @@ function MainGameCard(props) {
           <p>{props.gameDesc}</p>
           <button className="play-btn">Play</button>
         </div>
-        
       </div>
     </div>
   );

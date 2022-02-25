@@ -14,3 +14,15 @@ a {
   box-shadow: 0px 0px 0px 4px #2860d8;
   cursor: pointer;
 }
+
+.green {
+  background-color: #b5e352
+}
+
+.red {
+  background-color: #e05c56;
+}
+
+.blue {
+  background-color:#00a2b3;
+}

@@ -3,17 +3,6 @@
   margin: 0 auto;
   height: calc(100% - 65px);
 }
-.green {
-  background-color: rgba(30, 255, 0, 0.568)
-}
-
-.red {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-.blue {
-  background-color: rgba(0, 81, 255, 0.5);
-}
 
 .underline {
   border-bottom: 1px solid #000;
