@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+import { CSSTransition } from 'react-transition-group';
 
 import Square from "./Square.js"
+import MenuModal from "./MenuModal.js";
 
 import "../../../stylesheets/games/tictactoe/TicTacToe.css";
 
 function TicTacToe(){
+  const nodeRef = React.useRef(null)
   const [playerX, setPlayerX] = useState(true);
   const [board, setBoard] = useState(Array(9).fill(null));
   const [gameOver, setGameOver] = useState(false);
+  const [tieGame, setTieGame] = useState(false);
   const [reset, setReset] = useState(false);
-  
+  const [showMessage, setShowMessage] = useState(false);
+
   const squareOnClick = (i) => {
     if (reset){
       setReset(false);
@@ -18,8 +23,16 @@ function TicTacToe(){
     boardOnClick[i] = playerX ? "X" : "O";
     if (calculateWinner(boardOnClick)){
       setGameOver(true);
+      setShowMessage(true);
       return;
     }
+    if (checkTie(boardOnClick)){
+      setGameOver(true);
+      setTieGame(true);
+      setShowMessage(true);
+      return;
+    }
+  
     setPlayerX(playerX ? false : true);
     setBoard(boardOnClick);
   }
@@ -27,8 +40,10 @@ function TicTacToe(){
   const restartGame = () => {
     setReset(true);
     setGameOver(false);
+    setTieGame(false);
     setBoard(Array(9).fill(null));
     setPlayerX(true);
+    setShowMessage(false);
   }
 
   const renderSquare = (i) =>{
@@ -38,12 +53,13 @@ function TicTacToe(){
                   reset={reset}
                   squareOnClick={squareOnClick}/>;
   }
-  console.log(board);
+
   return(
     <div className="ttt-game-container">
       <div className="ttt-board-container">
         <div className="ttt-status">
-          <p>{playerX && !gameOver ? "Player 1 turn" : 
+          <p>{tieGame ? "Tie Game!" :
+              playerX && !gameOver ? "Player 1 turn" : 
               !playerX && !gameOver ? "Player 2 turn" : 
               playerX && gameOver ? "Player 1 wins!" : "Player 2 wins!"}
           </p>
@@ -63,7 +79,17 @@ function TicTacToe(){
           {renderSquare(7)}
           {renderSquare(8)}
         </div>
-        {gameOver ? <button onClick={restartGame}>Play Again</button> : ""}
+        <CSSTransition in={ showMessage } 
+                      nodeRef={nodeRef}
+                      timeout={ 200 } 
+                      classNames="my-node"
+                      unmountOnExit
+                      onExited={() => setShowMessage(false)}>
+          <MenuModal restartGame={restartGame} 
+                    tieGame={tieGame}
+                    playerX={playerX}
+                    gameOver={gameOver}/>
+        </CSSTransition>
       </div>
     </div>
   )
@@ -87,6 +113,15 @@ function calculateWinner(squares) {
     }
   }
   return null;
+}
+
+function checkTie(squares){
+  for (let i = 0; i < 9; i++){
+    if (!squares[i]){
+      return false;
+    }
+  }
+  return true;
 }
 
 export default TicTacToe;

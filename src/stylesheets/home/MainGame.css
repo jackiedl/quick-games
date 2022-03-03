@@ -90,6 +90,10 @@
   cursor: pointer;
 }
 
+.reactiontime{
+  background: #b5e352;
+}
+
 .tictactoe {
   background-color: #e05c56;
 }

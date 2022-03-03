@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../stylesheets/home/OtherGameCard.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

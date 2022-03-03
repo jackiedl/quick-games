@@ -7,18 +7,38 @@
   position: fixed;
   width: 100%;
   max-width: 350px;
+  height: 100%;
+  max-height: 600px;
   background: white;
   box-shadow: 3px 6px 6px rgb(0 0 0 / 25%);
   overflow-y: scroll;
-  padding-top: 7px;
   border-top: 1px solid rgba(0,0,0,0.2);
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 }
-
 .header-menu.open {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
+.header-menu-game-container {
+  width: 100%;
+}
+
+.nav-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nav-menu-icon{
+  flex: .25;
+  color: black;
+}
+.nav-menu-game {
+  flex: 1;
+  color: black;
+}
+
