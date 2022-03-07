@@ -1,43 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { faO } from '@fortawesome/free-solid-svg-icons';
 
 function Square(props){ 
-  const [playerIcon, setPlayerIcon] = useState("");
-  const [gameOver, setGameOver] = useState(false);
-
-  const reset = () => {
-    setPlayerIcon("");
-  }
 
   const handleClick = () => {
-    if (playerIcon === "" && !gameOver){
-      props.squareOnClick(props.value);
-      if (props.playerX){
-        setPlayerIcon("X");
-      }else{
-        setPlayerIcon("O");
-      }
-    }
-  }
-
-  if (props.gameOver && !gameOver){
-    setGameOver(true);
-  }
-
-  if (props.reset && gameOver){
-    reset();
-    setGameOver(false);
+    props.squareOnClick(props.index);
   }
 
   return(
     <button className="ttt-square" onClick={handleClick}>
-      {playerIcon === "X" ?  <FontAwesomeIcon icon={faX} size="2xl" fixedWidth/> :
-       playerIcon === "O" ?  <FontAwesomeIcon icon={faO} size="2xl" fixedWidth/> :                     
-      ""
-      }
+       {props.board[props.index] === "X" ? <FontAwesomeIcon className="red-circle" icon={faX} size="2xl" /> :
+      props.board[props.index] === "O" ? <FontAwesomeIcon className="black-circle" icon={faO} size="2xl"/> : ""}
     </button>
   )
 }

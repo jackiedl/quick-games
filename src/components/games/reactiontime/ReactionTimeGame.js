@@ -14,7 +14,7 @@ function ReactionTimeGame(){
 
   useEffect(() => {
     var game = document.getElementById("rt-game").classList;
-    var timeout =  Math.random() * (10000 - 1500) + 1500; 
+    var timeout =  Math.random() * (8000 - 1500) + 1500; 
     if (!game.contains("blue") && startTime === 0){
       const timer = setTimeout(() => {
         game.remove("red");

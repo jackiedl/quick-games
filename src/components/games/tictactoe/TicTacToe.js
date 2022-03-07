@@ -2,56 +2,46 @@ import React, { useState } from "react";
 import { CSSTransition } from 'react-transition-group';
 
 import Square from "./Square.js"
-import MenuModal from "./MenuModal.js";
+import MenuModal from "../reusable/MenuModal";
 
 import "../../../stylesheets/games/tictactoe/TicTacToe.css";
 
 function TicTacToe(){
-  const nodeRef = React.useRef(null)
+  const nodeRef = React.useRef(null);
   const [playerX, setPlayerX] = useState(true);
   const [board, setBoard] = useState(Array(9).fill(null));
   const [gameOver, setGameOver] = useState(false);
   const [tieGame, setTieGame] = useState(false);
-  const [reset, setReset] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
   const squareOnClick = (i) => {
-    if (reset){
-      setReset(false);
-    }
     const boardOnClick = board.slice();
     boardOnClick[i] = playerX ? "X" : "O";
+
     if (calculateWinner(boardOnClick)){
       setGameOver(true);
       setShowMessage(true);
-      return;
+    }else{
+      setPlayerX(playerX ? false : true);
     }
     if (checkTie(boardOnClick)){
-      setGameOver(true);
       setTieGame(true);
+      setGameOver(true);
       setShowMessage(true);
-      return;
     }
-  
-    setPlayerX(playerX ? false : true);
     setBoard(boardOnClick);
   }
 
-  const restartGame = () => {
-    setReset(true);
-    setGameOver(false);
-    setTieGame(false);
-    setBoard(Array(9).fill(null));
-    setPlayerX(true);
-    setShowMessage(false);
+  const renderSquare = (i) =>{
+    return <Square index={i} board={board} squareOnClick={squareOnClick}/>;
   }
 
-  const renderSquare = (i) =>{
-    return <Square value={i} 
-                  playerX={playerX}
-                  gameOver={gameOver}
-                  reset={reset}
-                  squareOnClick={squareOnClick}/>;
+  const resetGame = () => {
+    setBoard((Array(9).fill(null)));
+    setGameOver(false);
+    setPlayerX(true);
+    setTieGame(false);
+    setShowMessage(false);
   }
 
   return(
@@ -85,9 +75,9 @@ function TicTacToe(){
                       classNames="my-node"
                       unmountOnExit
                       onExited={() => setShowMessage(false)}>
-          <MenuModal restartGame={restartGame} 
+          <MenuModal restartGame={resetGame} 
                     tieGame={tieGame}
-                    playerX={playerX}
+                    player1={playerX}
                     gameOver={gameOver}/>
         </CSSTransition>
       </div>

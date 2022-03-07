@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Home from "../../components/home/Home";
 import ReactionTime from '../games/reactiontime/ReactionTime';
 import TicTacToe from "../games/tictactoe/TicTacToe";
+import ConnectFour from "../games/connectfour/ConnectFour";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/reactiontime" element={<ReactionTime />} />
         <Route path="/tictactoe" element={<TicTacToe />} />
+        <Route path="/connectfour" element={<ConnectFour />} />
       </Route>
     </Routes>
   );

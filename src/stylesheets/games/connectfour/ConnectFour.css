@@ -1,0 +1,39 @@
+.cf-game-board-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cf-game-board, .cf-column{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.cf-column{
+  flex-direction: column;
+}
+.cf-game-status{
+  font-size: 24px;
+}
+.cf-square{
+  border: 1px solid #999;
+  height: 100px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.red-circle{
+  color: #e05c56;
+  height: 90px;
+}
+
+.black-circle{
+  color: #000000;
+  height: 90px;
+}

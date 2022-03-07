@@ -12,7 +12,9 @@ function OtherGames() {
           <Link to="/tictactoe">
             <OtherGameCard bgGame={"tictactoe"} gameName={"TicTacToe"} gameDesc={"Get three in a row to win"}/>
           </Link>
-          <OtherGameCard bgGame={"connectfour"} gameName={"Connect Four"} gameDesc={"Get four in a row to win"}/>
+          <Link to="/connectfour">
+            <OtherGameCard bgGame={"connectfour"} gameName={"Connect Four"} gameDesc={"Get four in a row to win"}/>
+          </Link>
           <OtherGameCard bgGame={"typingtest"} gameName={"Typing Test (Coming Soon)"} gameDesc={"Test your typing speed"}/>
         </div>
       </div>
