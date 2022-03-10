@@ -9,8 +9,8 @@ function Navmenu(props) {
       <div className='header-menu-game-container'>
         <NavmenuCard redirect={"/reactiontime"} gameName={"Reaction Time"} bgColor={"reactiontime"}/>
         <NavmenuCard redirect={"/tictactoe"} gameName={"Tic Tac Toe"} bgColor={"tictactoe"}/>
-        <NavmenuCard redirect={"/"} gameName={"Connect Four"} bgColor={"connectfour"}/>
-        <NavmenuCard redirect={"/"} gameName={"Typing Test"} bgColor={"typingtest"}/>
+        <NavmenuCard redirect={"/connectfour"} gameName={"Connect Four"} bgColor={"connectfour"}/>
+        <NavmenuCard redirect={"/typingtest"} gameName={"Typing Test"} bgColor={"typingtest"}/>
       </div>
     </div>
   );

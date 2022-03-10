@@ -15,7 +15,9 @@ function OtherGames() {
           <Link to="/connectfour">
             <OtherGameCard bgGame={"connectfour"} gameName={"Connect Four"} gameDesc={"Get four in a row to win"}/>
           </Link>
-          <OtherGameCard bgGame={"typingtest"} gameName={"Typing Test (Coming Soon)"} gameDesc={"Test your typing speed"}/>
+          <Link to="/typingtest">
+            <OtherGameCard bgGame={"typingtest"} gameName={"Typing Test"} gameDesc={"Test your typing speed"}/>
+          </Link>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import Home from "../../components/home/Home";
 import ReactionTime from '../games/reactiontime/ReactionTime';
 import TicTacToe from "../games/tictactoe/TicTacToe";
 import ConnectFour from "../games/connectfour/ConnectFour";
+import TypingTest from '../games/typingtest/TypingTest';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/reactiontime" element={<ReactionTime />} />
         <Route path="/tictactoe" element={<TicTacToe />} />
         <Route path="/connectfour" element={<ConnectFour />} />
+        <Route path="/typingtest" element={<TypingTest />} />
       </Route>
     </Routes>
   );
