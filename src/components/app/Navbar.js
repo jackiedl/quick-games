@@ -10,6 +10,7 @@ import Navmenu from "./Navmenu";
 function Navbar() {
   const [menuOpen, onMenuOpen] = useState(false);
 
+  
   const onBtnClick = () => {
     if (!menuOpen){
       onMenuOpen(true)
