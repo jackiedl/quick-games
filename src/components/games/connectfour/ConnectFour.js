@@ -28,6 +28,8 @@ function ConnectFour(){
     if (isWinner(fullBoard,i,row)){
       setGameOver(true);
       setShowMessage(true);
+      setBoard(fullBoard);
+      return;
     }else{
       setPlayerRed(playerRed ? false : true);
     }

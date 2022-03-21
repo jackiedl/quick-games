@@ -15,12 +15,17 @@ function TicTacToe(){
   const [showMessage, setShowMessage] = useState(false);
 
   const squareOnClick = (i) => {
+    if (board[i] !== null){
+      return;
+    }
     const boardOnClick = board.slice();
     boardOnClick[i] = playerX ? "X" : "O";
 
     if (calculateWinner(boardOnClick)){
       setGameOver(true);
       setShowMessage(true);
+      setBoard(boardOnClick);
+      return;
     }else{
       setPlayerX(playerX ? false : true);
     }

@@ -1,1 +1,17 @@
+.tt-game-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.tt-character {
+  white-space: pre;
+}
+
+.tt-character-current {
+  background-color: #09d3ac;
+}
+
+.tt-character-out {
+  color: silver;
+}

@@ -19,14 +19,13 @@
 .cf-square{
   border: 1px solid #999;
   height: 100px;
-  margin-right: -1px;
-  margin-top: -1px;
   padding: 0;
   text-align: center;
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  caret-color: transparent;
 }
 .red-circle{
   color: #e05c56;
