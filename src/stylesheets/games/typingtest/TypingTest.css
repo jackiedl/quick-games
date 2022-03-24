@@ -1,20 +1,37 @@
 .tt-game-container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tt-board-container{
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.tt-character {
-  white-space: pre;
-
+.tt-words-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 500px;
 }
 
-.tt-character-current {
+.tt-word{
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+}
+
+.tt-letter-indicator {
+  border-bottom: 1px solid black;
+}
+
+.correct {
   background-color: #09d3ac;
 }
 
-.tt-character-out {
-  color: silver;
+.incorrect{
+  background-color: #c22520;
 }
-
