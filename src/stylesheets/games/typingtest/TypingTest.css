@@ -1,11 +1,13 @@
 .tt-game-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .tt-character {
   white-space: pre;
+
 }
 
 .tt-character-current {
@@ -15,3 +17,4 @@
 .tt-character-out {
   color: silver;
 }
+
