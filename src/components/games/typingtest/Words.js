@@ -4,10 +4,23 @@ import Letters from "./Letters";
 
 function Words(props){
  
-  const indicator = (word, index, currentIndex) => {
-    if (word === props.word && index === currentIndex)
+  const indicator = (index, currentIndex) => {
+    if (props.isCurrent && index === currentIndex)
       return true;
     return false;
+  }
+
+  const accuracy = (index, value) => {
+    if (props.isCurrent)
+      if (index < props.currentWord.length)
+        if (props.keyPressed[index] === value) return "correct";
+        else
+          if (props.keyPressedIndex <= index) return "";
+        else
+          return "incorrect";  
+      else
+        return "incorrect";
+    return "";
   }
 
   return(
@@ -15,11 +28,8 @@ function Words(props){
         {props.word.split("").map((value, index) => 
           <Letters key={props.word+value+index} 
                   value={value} 
-                  accuracy={props.currentWord === props.word ? 
-                            props.keyPressedIndex > index ? 
-                            props.keyPressed[index] === value ? "correct" : "incorrect" :
-                            props.keyPressed[index] === value ? "correct" : ""  : ""}
-                  indicator={indicator(props.currentWord, index, props.keyPressedIndex)}/>
+                  accuracy={accuracy(index, value)}
+                  indicator={indicator(index, props.keyPressedIndex)}/>
         )}
     </div>
   )

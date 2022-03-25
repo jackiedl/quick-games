@@ -20,6 +20,7 @@ function TypingTest() {
     return(
       <Words key={currentWord} 
             word={currentKeysPressed.length > currentWord.length ? currentWord+currentKeysPressed.slice(currentWord.length) : currentWord} 
+            isCurrent={true}
             currentWord={currentWord}
             keyPressed={currentKeysPressed}
             keyPressedIndex={currentKeysPressed.length >= currentWord.length ? (currentWord+currentKeysPressed.slice(currentWord.length)).length - 1 : currentKeysPressed.length}/>)
@@ -30,6 +31,7 @@ function TypingTest() {
       outgoingWords.map((value, index) => (
         <Words key={value + index} 
               word={value} 
+              isCurrent={false}
               currentWord={currentWord}
               keyPressed={currentKeysPressed}
               keyPressedIndex={null}/>
@@ -42,6 +44,7 @@ function TypingTest() {
       wordsToMatch.map((value, index) => (
         <Words key={value + index} 
               word={value} 
+              isCurrent={false}
               currentWord={currentWord}
               keyPressed={currentKeysPressed}
               keyPressedIndex={null}/>
