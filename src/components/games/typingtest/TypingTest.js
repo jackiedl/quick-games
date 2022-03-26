@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Words from './Words';
 
@@ -7,7 +7,7 @@ import { generate } from "./utils/words";
 
 import "../../../stylesheets/games/typingtest/TypingTest.css";
 
-const initialWords = generate();
+const initialWords =  new Array(30).fill().map(_ => generate())
 
 function TypingTest() {
 
@@ -15,6 +15,22 @@ function TypingTest() {
   const [currentWord, setCurrentWord] = useState(initialWords[0])
   const [wordsToMatch, setWordsToMatch] = useState(initialWords.slice(1));
   const [outgoingWords, setOutgoingWords] = useState([]);
+  const [timer, setTimer] = useState(10);
+  const [gameStart, setGameStart] = useState(false);
+
+  useEffect(() => {
+    if (timer === 0){
+      setGameStart(false);
+      setTimer(10);
+    }
+    if (gameStart){
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => {clearInterval(interval)}
+    }
+    return;
+  }, [ gameStart, timer ])
 
   const displayCurrentWord = () => {
     return(
@@ -23,7 +39,7 @@ function TypingTest() {
             isCurrent={true}
             currentWord={currentWord}
             keyPressed={currentKeysPressed}
-            keyPressedIndex={currentKeysPressed.length >= currentWord.length ? (currentWord+currentKeysPressed.slice(currentWord.length)).length - 1 : currentKeysPressed.length}/>)
+            keyPressedIndex={currentKeysPressed.length}/>)
   }
 
   const displayOutgoingWords = () => {
@@ -58,11 +74,22 @@ function TypingTest() {
     let updateWordsToMatch = wordsToMatch;
     let updateOutgoingWords = outgoingWords;
 
+    if (!gameStart && key === updateCurrentWord[0]){
+      setGameStart(true);
+    }
+
     if (key === " " && updateCurrentWord === updateKeyPress){
-        updateKeyPress = "";
-        updateCurrentWord = updateWordsToMatch[0];
+      updateKeyPress = "";
+      updateCurrentWord = updateWordsToMatch[0];
+      if (updateOutgoingWords.length < 20){
         updateWordsToMatch = updateWordsToMatch.slice(1);
         updateOutgoingWords.push(currentWord);
+      }else{
+        updateWordsToMatch = updateWordsToMatch.slice(1);
+        updateWordsToMatch = updateWordsToMatch.concat( new Array(10).fill().map(_ => generate()))
+        updateOutgoingWords = updateOutgoingWords.slice(10);
+        updateOutgoingWords.push(currentWord);
+      }
     }
     else{
       if (key === "Backspace"){
@@ -84,7 +111,9 @@ function TypingTest() {
   return (
     <div className="tt-game-container">
       <div className="tt-board-container">
-        <div className="tt-game-menu-container"></div>
+        <div className="tt-game-menu-container">
+          {timer}
+        </div>
         <div className="tt-words-container">
           {displayOutgoingWords()}
           {displayCurrentWord()}

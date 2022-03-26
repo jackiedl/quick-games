@@ -13,11 +13,13 @@ function Words(props){
   const accuracy = (index, value) => {
     if (props.isCurrent)
       if (index < props.currentWord.length)
-        if (props.keyPressed[index] === value) return "correct";
+        if (props.keyPressed[index] === value)
+          return "correct";
         else
-          if (props.keyPressedIndex <= index) return "";
+          if (props.keyPressedIndex <= index)
+            return "";
         else
-          return "incorrect";  
+            return "incorrect";  
       else
         return "incorrect";
     return "";
