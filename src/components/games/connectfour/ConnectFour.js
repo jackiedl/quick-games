@@ -83,7 +83,8 @@ function ConnectFour(){
           <MenuModal restartGame={resetGame} 
                     tieGame={tieGame}
                     player1={playerRed}
-                    gameOver={gameOver}/>
+                    gameOver={gameOver}
+                    game={"connectfour"}/>
         </CSSTransition>
       </div>
     </div>

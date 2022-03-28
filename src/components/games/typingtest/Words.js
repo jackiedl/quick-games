@@ -31,7 +31,8 @@ function Words(props){
           <Letters key={props.word+value+index} 
                   value={value} 
                   accuracy={accuracy(index, value)}
-                  indicator={indicator(index, props.keyPressedIndex)}/>
+                  indicator={indicator(index, props.keyPressedIndex)}
+                  completed={props.completed ? " finished" : ""}/>
         )}
     </div>
   )

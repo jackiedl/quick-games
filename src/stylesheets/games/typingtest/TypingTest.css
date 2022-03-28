@@ -10,28 +10,50 @@
   align-items: center;
   justify-content: center;
 }
+.tt-game-menu-container{
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-content:space-between;
+}
+.tt-game-menu-container > div{
+  width: 50%;
+  line-height: 75px;
+  font-size: 25px;
+}
 
 .tt-words-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 500px;
+  width: 60%;
 }
 
 .tt-word{
   display: flex;
   flex-direction: row;
-  padding-right: 5px;
+  padding-left: 5px;
 }
 
-.tt-letter-indicator {
+.tt-letter{
+  font-size: 1.5em;
+  color: #d1d0c5;
+}
+
+.indicator {
   border-bottom: 1px solid black;
 }
 
+.finished{
+  color: black;
+}
+
 .correct {
+  color: black;
   background-color: #09d3ac;
 }
 
 .incorrect{
+  color: maroon;
   background-color: #c22520;
 }

@@ -83,7 +83,8 @@ function TicTacToe(){
           <MenuModal restartGame={resetGame} 
                     tieGame={tieGame}
                     player1={playerX}
-                    gameOver={gameOver}/>
+                    gameOver={gameOver}
+                    game={"tictactoe"}/>
         </CSSTransition>
       </div>
     </div>
