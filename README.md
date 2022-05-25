@@ -1,6 +1,6 @@
 # Quick Games
 
-This project is a Collection of Quick to Play Games that Include TicTacToe, ConnectFour, Reaction Test, and Typing Test
+This project is a Collection of Quick to Play Games that Include TicTacToe, ConnectFour, Reaction Test, and Typing Test: https://jdl-quick-games.web.app/
 
 ## Project Details
 
